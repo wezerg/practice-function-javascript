@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+</head>
+<body>
+    <script>
+        function firstCharUnique(chaine){
+            if (chaine) {
+                for (const c in chaine) {
+                    let reg = new RegExp(chaine[c], 'g');
+                    if (chaine.match(reg).length === 1) {
+                        console.log(`Première occurence unique trouvée : ${chaine[c]}`);
+                        return chaine[c];
+                    }
+                }
+                console.log("Aucune occurence unique trouvée");
+                return null;
+            }
+        }
+        firstCharUnique('bonjour');
+        firstCharUnique('hello henry');
+        firstCharUnique('coucou');
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+</head>
+<body>
+    <script>
+        function numberCharInString(chaine, char){
+            if (char && chaine) {
+                char = char.toLowerCase();
+                chaine = chaine.toLowerCase();
+                let reg = new RegExp(char, 'g');
+                if (chaine.match(reg)) {
+                    console.log(`L'occurence "${char}" est présente : ${chaine.match(reg).length} fois.`);
+                    return chaine.match(reg).length;
+                }
+                else{
+                    console.log(`L'occurence "${char}" est présente : 0 fois.`);
+                    return 0;
+                }
+            }
+        }
+        numberCharInString("bonjour", "o");
+        numberCharInString("bonjour", "O");
+        numberCharInString("hello les amis", "o");
+        numberCharInString("hello les amis", "z");
+    </script>
+</body>
+</html>
