@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3</title>
+</head>
+<body>
+    <script>
+        function joinArray(array1, array2){
+            if (array1.length > 0 && array2.length > 0) {
+                let arrayResult = Array.from(new Set(array1.concat(array2)));
+                console.log('Le nouveau tableau fusioné : ');
+                console.log(arrayResult);
+                return arrayResult;
+            }
+            return null;
+        }
+        joinArray(['a', 'b'], ['c', 'd']);
+        joinArray(['a', 'b'], ['a', 'd']);
+        joinArray(['a', 'b', 'a'], ['a', 'd', 'b', 'a']);
+    </script>
+</body>
+</html>

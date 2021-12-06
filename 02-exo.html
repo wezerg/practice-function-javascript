@@ -14,18 +14,18 @@
                 chaine = chaine.toLowerCase();
                 let reg = new RegExp(char, 'g');
                 if (chaine.match(reg)) {
-                    console.log(`L'occurence "${char}" est présente : ${chaine.match(reg).length} fois.`);
+                    console.log(`Dans la chaine "${chaine}", l'occurence "${char}" est présente : ${chaine.match(reg).length} fois.`);
                     return chaine.match(reg).length;
                 }
                 else{
-                    console.log(`L'occurence "${char}" est présente : 0 fois.`);
+                    console.log(`Dans la chaine "${chaine}", l'occurence "${char}" est présente : 0 fois.`);
                     return 0;
                 }
             }
         }
         numberCharInString("bonjour", "o");
-        numberCharInString("bonjour", "O");
         numberCharInString("hello les amis", "o");
+        numberCharInString("bonjour", "O");
         numberCharInString("hello les amis", "z");
     </script>
 </body>

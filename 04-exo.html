@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4</title>
+</head>
+<body>
+    <script>
+        function randomFromArray(array){
+            try {
+                if (array.length > 0) {
+                    if (array.find(elm => elm.match(/["/*;]/))) {
+                        throw `Erreur => Mauvais caractère (", /, * ou ;) présent dans le tableau !`;
+                    }
+                    let min = 0;
+                    let max = array.length - 1;
+                    let rand = Math.floor(Math.random() * (max - min + 1) + min);
+                    console.log(`La valeur aléatoire choisie du tableau est : "${array[rand]}"`)
+                    return array[rand];
+                }
+                else{
+                    throw 'Erreur => Le tableau est vide !';
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        randomFromArray(['a', 'b', 'c', 'd']);
+        randomFromArray([]);
+        randomFromArray(["Issy-les-moulineaux", "Paris", "Versaille"]);
+        randomFromArray(['"', "Issy-les-moulineaux", "Paris", "Versaille"]);
+        randomFromArray(['/']);
+        randomFromArray(['*']);
+        randomFromArray([';']);
+    </script>
+</body>
+</html>
